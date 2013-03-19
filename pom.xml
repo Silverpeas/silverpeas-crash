@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>22-SNAPSHOT</version>
+    <version>25-SNAPSHOT</version>
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
@@ -15,20 +15,15 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <crash.version>1.0.0-cr1</crash.version>
+    <crash.version>1.2.0-cr9-SNAPSHOT</crash.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.crsh</groupId>
-      <artifactId>crsh.shell.packaging</artifactId>
-      <version>${crash.version}</version>
-      <type>war</type>
-    </dependency>
-    <dependency>
-      <groupId>org.crsh</groupId>
       <artifactId>crsh.jcr.jackrabbit</artifactId>
       <version>${crash.version}</version>
+      <type>war</type>
       <exclusions>
         <exclusion>
           <artifactId>jackrabbit-spi</artifactId>
@@ -83,8 +78,9 @@
           <overlays>
             <overlay>
               <groupId>org.crsh</groupId>
-              <artifactId>crsh.shell.packaging</artifactId>
+              <artifactId>crsh.jcr.jackrabbit</artifactId>
               <excludes>
+                <exclude>WEB-INF/lib/bcprov-jdk16-1.46.jar</exclude>
                 <exclude>WEB-INF/lib/groovy-all-1.7.6.jar</exclude>
               </excludes>
             </overlay>
