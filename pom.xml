@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.silverpeas</groupId>
@@ -8,7 +7,7 @@
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>5.12</version>
   <packaging>war</packaging>
 
   <name>silverpeas-crash</name>
@@ -89,4 +88,8 @@
       </plugin>
     </plugins>
   </build>
+
+  <scm>
+    <tag>silverpeas-crash-5.12</tag>
+  </scm>
 </project>
