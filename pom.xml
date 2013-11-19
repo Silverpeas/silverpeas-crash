@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>25-SNAPSHOT</version>
+    <version>26</version>
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
