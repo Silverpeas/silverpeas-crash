@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
-  <version>5.13-SNAPSHOT</version>
+  <version>5.13</version>
   <packaging>war</packaging>
 
   <name>silverpeas-crash</name>
@@ -100,4 +100,8 @@
       </plugin>
     </plugins>
   </build>
+
+  <scm>
+    <tag>silverpeas-crash-5.13</tag>
+  </scm>
 </project>
