@@ -14,7 +14,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <crash.version>1.2.6</crash.version>
+    <crash.version>1.2.8</crash.version>
   </properties>
 
   <dependencies>
@@ -66,8 +66,19 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.silverpeas.core</groupId>
+      <artifactId>lib-core</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
-  
+
   <build>
     <plugins>
       <plugin>
@@ -79,8 +90,9 @@
               <groupId>org.crsh</groupId>
               <artifactId>crsh.jcr.jackrabbit</artifactId>
               <excludes>
+                <exclude>WEB-INF/jboss-deployment-structure.xml</exclude>
                 <exclude>WEB-INF/lib/bcprov-jdk16-1.46.jar</exclude>
-                <exclude>WEB-INF/lib/groovy-all-1.7.6.jar</exclude>
+                <!--<exclude>WEB-INF/lib/groovy-all-1.8.9.jar</exclude>-->
               </excludes>
             </overlay>
           </overlays>
