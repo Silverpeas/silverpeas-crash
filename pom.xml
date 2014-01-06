@@ -14,7 +14,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <crash.version>1.3.0-beta11</crash.version>
+    <crash.version>1.3.0-beta12</crash.version>
   </properties>
 
   <dependencies>
