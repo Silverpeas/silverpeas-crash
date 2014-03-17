@@ -3,18 +3,18 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>27-SNAPSHOT</version>
+    <version>27</version>
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
-  <version>5.14-SNAPSHOT</version>
+  <version>5.15-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>silverpeas-crash</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <crash.version>1.3.0-beta12</crash.version>
+    <crash.version>1.3.0-beta14</crash.version>
   </properties>
 
   <dependencies>
