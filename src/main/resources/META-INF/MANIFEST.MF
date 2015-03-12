@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Created-By: Silverpeas
+Dependencies: ${jcr.jca} services, org.jboss.as.naming, org.bouncycastle
