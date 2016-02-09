@@ -15,25 +15,23 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jcr.jca>deployment.jackrabbit-jca.rar</jcr.jca>
-    <crash.version>1.2.10</crash.version>
+    <crash.version>1.3.2</crash.version>
+    <crash.jcr.version>1.0.0</crash.jcr.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.crsh</groupId>
-      <artifactId>crsh.jcr.jackrabbit</artifactId>
-      <version>${crash.version}</version>
-      <scope>provided</scope>
+      <groupId>org.crashub</groupId>
+      <artifactId>jcr.core</artifactId>
+      <version>${crash.jcr.version}</version>
       <type>war</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.crashub</groupId>
+      <artifactId>jcr.jackrabbit</artifactId>
+      <version>${crash.jcr.version}</version>
       <exclusions>
-        <exclusion>
-          <artifactId>jackrabbit-spi</artifactId>
-          <groupId>org.apache.jackrabbit</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>jackrabbit-api</artifactId>
-          <groupId>org.apache.jackrabbit</groupId>
-        </exclusion>
         <exclusion>
           <artifactId>jackrabbit-core</artifactId>
           <groupId>org.apache.jackrabbit</groupId>
@@ -51,31 +49,54 @@
           <groupId>org.apache.jackrabbit</groupId>
         </exclusion>
         <exclusion>
-          <artifactId>slf4j-api</artifactId>
-          <groupId>org.slf4j</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>slf4j-simple</artifactId>
-          <groupId>org.slf4j</groupId>
-        </exclusion>
-        <exclusion>
           <artifactId>lucene-core</artifactId>
           <groupId>org.apache.lucene</groupId>
         </exclusion>
         <exclusion>
-          <artifactId>commons-logging</artifactId>
-          <groupId>commons-logging</groupId>
+          <groupId>org.crashub</groupId>
+          <artifactId>jcr.core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.crashub</groupId>
+          <artifactId>crash.shell</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.crashub</groupId>
+          <artifactId>crash.connectors.ssh</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.crashub</groupId>
+          <artifactId>crash.packaging</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
-    <!--
     <dependency>
-      <artifactId>jackrabbit-jcr-commons</artifactId>
-      <groupId>org.apache.jackrabbit</groupId>
-      <version>2.8.0</version>
-      <scope>compile</scope>
+      <groupId>org.crashub</groupId>
+      <artifactId>crash.shell</artifactId>
+      <version>${crash.version}</version>
     </dependency>
-    -->
+    <dependency>
+      <groupId>org.crashub</groupId>
+      <artifactId>crash.connectors.ssh</artifactId>
+      <version>${crash.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcprov-jdk15on</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcpkix-jdk15on</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.crashub</groupId>
+      <artifactId>crash.packaging</artifactId>
+      <version>${crash.version}</version>
+      <type>war</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -90,13 +111,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
+          <workDirectory>${build.directory}/overlays</workDirectory>
           <overlays>
             <overlay>
-              <groupId>org.crsh</groupId>
-              <artifactId>crsh.jcr.jackrabbit</artifactId>
+              <groupId>org.crashub</groupId>
+              <artifactId>jcr.core</artifactId>
               <excludes>
                 <exclude>WEB-INF/jboss-deployment-structure.xml</exclude>
-                <exclude>WEB-INF/lib/bcprov-jdk16-1.46.jar</exclude>
+                <exclude>WEB-INF/lib/bcprov-jdk15on-1.49.jar</exclude>
+                <exclude>WEB-INF/lib/bcpkix-jdk15on-1.49.jar</exclude>
+                <exclude>WEB-INF/lib/crash.cli-1.3.0.jar</exclude>
+                <exclude>WEB-INF/lib/crash.connectors.ssh-1.3.0.jar</exclude>
+                <exclude>WEB-INF/lib/crash.connectors.telnet-1.3.0.jar</exclude>
+                <exclude>WEB-INF/lib/crash.connectors.web-1.3.0.jar</exclude>
+                <exclude>WEB-INF/lib/crash.shell-1.3.0.jar</exclude>
               </excludes>
             </overlay>
           </overlays>
