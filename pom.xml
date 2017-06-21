@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.silverpeas</groupId>
     <artifactId>silverpeas-project</artifactId>
-    <version>1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jcr.jca>deployment.jackrabbit-jca.rar</jcr.jca>
     <crash.version>1.3.2</crash.version>
-    <crash.jcr.version>1.0.0</crash.jcr.version>
+    <crash.jcr.version>1.0.1-SNAPSHOT</crash.jcr.version>
   </properties>
 
   <dependencies>
