@@ -3,11 +3,11 @@
   <parent>
     <groupId>org.silverpeas</groupId>
     <artifactId>silverpeas-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
   <groupId>org.silverpeas.crash</groupId>
   <artifactId>silverpeas-crash</artifactId>
-  <version>6.0-SNAPSHOT</version>
+  <version>6.0</version>
   <packaging>war</packaging>
 
   <name>silverpeas-crash</name>
@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jcr.jca>deployment.jackrabbit-jca.rar</jcr.jca>
     <crash.version>1.3.2</crash.version>
-    <crash.jcr.version>1.0.1-SNAPSHOT</crash.jcr.version>
+    <crash.jcr.version>1.0.1-build180206</crash.jcr.version>
   </properties>
 
   <dependencies>
@@ -111,7 +111,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
-          <workDirectory>${build.directory}/overlays</workDirectory>
+          <workDirectory>${project.build.directory}/overlays</workDirectory>
           <overlays>
             <overlay>
               <groupId>org.crashub</groupId>
